@@ -1,0 +1,1431 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Luz de Luna | Piezas artesanales que conservan recuerdos</title>
+<meta name="description" content="Luz de Luna crea piezas artesanales personalizadas que preservan recuerdos, honran vínculos emocionales y transforman sentimientos en objetos físicos llenos de significado.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+  :root {
+    --lila-principal: #DDB5F5;
+    --lila-suave: #EAD8F7;
+    --lavanda-claro: #F8F0FD;
+    --morado-elegante: #725487;
+    --gris-neutro: #77717D;
+    --blanco: #FFFFFF;
+    --blanco-calido: #FFFCFF;
+    --sombra-sutil: 0 10px 40px -12px rgba(114, 84, 135, 0.18);
+    --sombra-hover: 0 20px 50px -14px rgba(114, 84, 135, 0.28);
+    --transicion: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    --transicion-suave: all 0.6s ease;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+  }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--blanco-calido);
+    color: #2d2a35;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #2d2a35;
+  }
+
+  p {
+    color: #5a5463;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 32px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: var(--transicion);
+    text-align: center;
+  }
+
+  .btn-lila {
+    background-color: var(--lila-principal);
+    color: #4a375c;
+  }
+
+  .btn-lila:hover {
+    background-color: #cf9df2;
+    transform: translateY(-2px);
+    box-shadow: var(--sombra-hover);
+  }
+
+  .btn-blanco {
+    background-color: var(--blanco);
+    color: var(--morado-elegante);
+    border: 1.5px solid #e3d8f0;
+  }
+
+  .btn-blanco:hover {
+    background-color: var(--lavanda-claro);
+    border-color: var(--lila-principal);
+    transform: translateY(-2px);
+    box-shadow: var(--sombra-sutil);
+  }
+
+  /* Header */
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: var(--transicion);
+  }
+
+  header.scrolled {
+    background: rgba(255, 252, 255, 0.95);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
+  }
+
+  .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+  }
+
+  .logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.75rem;
+    font-weight: 900;
+    color: var(--morado-elegante);
+    letter-spacing: 1px;
+  }
+
+  .logo span {
+    color: var(--lila-principal);
+  }
+
+  .nav-links {
+    display: flex;
+    list-style: none;
+    gap: 32px;
+  }
+
+  .nav-links a {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #5a5463;
+    transition: var(--transicion);
+    position: relative;
+  }
+
+  .nav-links a:hover {
+    color: var(--morado-elegante);
+  }
+
+  .mobile-menu-btn {
+    display: none;
+    font-size: 1.5rem;
+    color: var(--morado-elegante);
+    cursor: pointer;
+    background: none;
+    border: none;
+  }
+
+  /* Hero */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    padding-top: 80px;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+  }
+
+  .hero .container {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    min-height: 85vh;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    margin-bottom: 20px;
+    color: #2d2a35;
+  }
+
+  .hero h1 span {
+    color: var(--lila-principal);
+  }
+
+  .hero p {
+    font-size: 1.125rem;
+    max-width: 520px;
+    margin-bottom: 32px;
+  }
+
+  .hero-buttons {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .hero-visual {
+    position: relative;
+    height: 560px;
+    border-radius: 40px;
+    overflow: hidden;
+    box-shadow: var(--sombra-sutil);
+  }
+
+  .hero-visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .hero-visual::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(221, 181, 245, 0.12) 0%, rgba(255, 252, 255, 0.6) 100%);
+    pointer-events: none;
+  }
+
+  .luna-decoration {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: var(--lavanda-claro);
+    border-radius: 50%;
+    filter: blur(60px);
+    opacity: 0.6;
+    z-index: 0;
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .luna-1 { top: 10%; right: -80px; }
+  .luna-2 { bottom: 15%; left: -60px; width: 220px; height: 220px; animation-delay: -2s; }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+  }
+
+  /* Section common */
+  section {
+    padding: 100px 0;
+  }
+
+  .section-header {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 64px;
+  }
+
+  .section-header .badge {
+    display: inline-block;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--lila-principal);
+    margin-bottom: 12px;
+  }
+
+  .section-header h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: 16px;
+  }
+
+  .section-header p {
+    font-size: 1.125rem;
+    color: var(--gris-neutro);
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: var(--transicion-suave);
+  }
+
+  .reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Nosotros */
+  .nosotros {
+    background: var(--blanco);
+  }
+
+  .nosotros-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+
+  .nosotros-text h3 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+
+  .nosotros-text p {
+    margin-bottom: 20px;
+    font-size: 1.05rem;
+  }
+
+  .nosotros-visual {
+    height: 460px;
+    border-radius: 32px;
+    overflow: hidden;
+    box-shadow: var(--sombra-sutil);
+    position: relative;
+  }
+
+  .nosotros-visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* Mision Vision */
+  .mision-vision {
+    background: var(--blanco-calido);
+  }
+
+  .mv-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+
+  .mv-card {
+    background: var(--blanco);
+    padding: 48px 40px;
+    border-radius: 32px;
+    box-shadow: var(--sombra-sutil);
+    border: 1px solid #f0e6f7;
+    transition: var(--transicion);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .mv-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--sombra-hover);
+    border-color: var(--lila-principal);
+  }
+
+  .mv-card .icon {
+    width: 56px;
+    height: 56px;
+    background: var(--lavanda-claro);
+    color: var(--morado-elegante);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin-bottom: 24px;
+  }
+
+  .mv-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 16px;
+  }
+
+  .mv-card p {
+    font-size: 0.975rem;
+    color: #5a5463;
+    flex: 1;
+  }
+
+  /* Catalogo */
+  .catalogo {
+    background: var(--blanco);
+  }
+
+  .catalogo-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 28px;
+  }
+
+  .producto-card {
+    background: var(--blanco);
+    border-radius: 28px;
+    overflow: hidden;
+    border: 1px solid #f0e6f7;
+    box-shadow: var(--sombra-sutil);
+    transition: var(--transicion);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .producto-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--sombra-hover);
+    border-color: var(--lila-principal);
+  }
+
+  .producto-img {
+    position: relative;
+    height: 320px;
+    overflow: hidden;
+    cursor: pointer;
+  }
+
+  .producto-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transicion-suave);
+  }
+
+  .producto-card:hover .producto-img img {
+    transform: scale(1.05);
+  }
+
+  .producto-img .lupa {
+    position: absolute;
+    inset: 0;
+    background: rgba(221, 181, 245, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: var(--morado-elegante);
+    opacity: 0;
+    transition: var(--transicion);
+  }
+
+  .producto-card:hover .producto-img .lupa {
+    opacity: 1;
+  }
+
+  .producto-info {
+    padding: 24px 24px 28px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .editable-field {
+    background: var(--lavanda-claro);
+    border-radius: 12px;
+    padding: 10px 14px;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #4a375c;
+    border: none;
+    outline: none;
+    margin-bottom: 12px;
+    resize: vertical;
+    min-height: 44px;
+  }
+
+  .editable-field::placeholder {
+    color: var(--gris-neutro);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-style: italic;
+  }
+
+  .editable-field:focus {
+    background: var(--blanco);
+    border-color: var(--lila-principal);
+  }
+
+  .producto-precio {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    color: var(--morado-elegante);
+    margin: 6px 0 20px;
+  }
+
+  .producto-btn {
+    width: 100%;
+    padding: 12px 20px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    border: none;
+    border-radius: 14px;
+    background: var(--lila-principal);
+    color: #4a375c;
+    cursor: pointer;
+    transition: var(--transicion);
+    margin-top: auto;
+  }
+
+  .producto-btn:hover {
+    background: #cf9df2;
+    transform: translateY(-2px);
+  }
+
+  /* Modal */
+  .modal {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: rgba(20, 18, 30, 0.7);
+    backdrop-filter: blur(8px);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .modal.open {
+    display: flex;
+    opacity: 1;
+  }
+
+  .modal-content {
+    position: relative;
+    width: 90vw;
+    max-width: 700px;
+    background: var(--blanco);
+    border-radius: 24px;
+    padding: 32px;
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+
+  .modal.open .modal-content {
+    transform: scale(1);
+  }
+
+  .modal-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 40px;
+    height: 40px;
+    background: var(--lavanda-claro);
+    border: none;
+    border-radius: 50%;
+    font-size: 1.25rem;
+    color: var(--morado-elegante);
+    cursor: pointer;
+    transition: var(--transicion);
+    z-index: 10;
+  }
+
+  .modal-close:hover {
+    background: var(--lila-principal);
+  }
+
+  .modal img {
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+    margin-bottom: 20px;
+  }
+
+  /* Valores */
+  .valores {
+    background: var(--blanco-calido);
+  }
+
+  .valores-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 28px;
+  }
+
+  .valor-card {
+    text-align: center;
+    padding: 40px 24px;
+    border-radius: 28px;
+    border: 1px solid #f0e6f7;
+    transition: var(--transicion);
+  }
+
+  .valor-card:hover {
+    background: var(--blanco);
+    box-shadow: var(--sombra-sutil);
+    transform: translateY(-5px);
+    border-color: var(--lila-principal);
+  }
+
+  .valor-card .icon {
+    width: 64px;
+    height: 64px;
+    background: var(--lavanda-claro);
+    color: var(--morado-elegante);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.75rem;
+    margin: 0 auto 24px;
+  }
+
+  .valor-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 12px;
+  }
+
+  .valor-card p {
+    font-size: 0.95rem;
+    color: var(--gris-neutro);
+  }
+
+  /* Emocional */
+  .emocional {
+    background: linear-gradient(135deg, var(--lavanda-claro) 0%, var(--lila-suave) 100%);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .emocional .container {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 120px 24px;
+  }
+
+  .emocional blockquote {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.75rem, 4vw, 2.75rem);
+    font-style: italic;
+    color: #4a375c;
+    line-height: 1.4;
+    max-width: 700px;
+    margin: 0 auto 24px;
+    position: relative;
+  }
+
+  .emocional blockquote::before {
+    content: '"';
+    font-size: 4rem;
+    color: var(--lila-principal);
+    position: absolute;
+    top: -30px;
+    left: -20px;
+    opacity: 0.3;
+    line-height: 1;
+  }
+
+  .emocional .foto {
+    margin-top: 40px;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: var(--sombra-sutil);
+    max-width: 560px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .emocional .foto img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    opacity: 0.85;
+  }
+
+  /* Contacto */
+  .contacto {
+    background: var(--blanco);
+  }
+
+  .contacto-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+  }
+
+  .contacto-info h3 {
+    font-size: 2rem;
+    margin-bottom: 16px;
+  }
+
+  .contacto-info p {
+    margin-bottom: 24px;
+    font-size: 1.05rem;
+  }
+
+  .contacto-datos {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+
+  .dato {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-size: 0.975rem;
+    color: #5a5463;
+  }
+
+  .dato i {
+    color: var(--lila-principal);
+    width: 20px;
+  }
+
+  .contacto-form {
+    background: var(--lavanda-claro);
+    padding: 48px 40px;
+    border-radius: 32px;
+    border: 1px solid #f0e6f7;
+  }
+
+  .contacto-form h3 {
+    font-size: 1.75rem;
+    margin-bottom: 24px;
+  }
+
+  .form-group {
+    margin-bottom: 20px;
+  }
+
+  .form-group label {
+    display: block;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #4a375c;
+    margin-bottom: 8px;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1.5px solid #e3d8f0;
+    border-radius: 14px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.975rem;
+    color: #2d2a35;
+    background: var(--blanco);
+    transition: var(--transicion);
+  }
+
+  .form-group input:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: var(--lila-principal);
+    box-shadow: 0 0 0 4px rgba(221, 181, 245, 0.2);
+  }
+
+  .form-group textarea {
+    min-height: 120px;
+    resize: vertical;
+  }
+
+  .whatsapp-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    padding: 14px 20px;
+    background: #25d366;
+    color: var(--blanco);
+    border: none;
+    border-radius: 14px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: var(--transicion);
+    margin-top: 8px;
+  }
+
+  .whatsapp-btn:hover {
+    background: #1eb053;
+    transform: translateY(-2px);
+    box-shadow: var(--sombra-sutil);
+  }
+
+  .form-message {
+    margin-top: 12px;
+    font-size: 0.9rem;
+    color: var(--gris-neutro);
+    min-height: 1.2em;
+  }
+
+  /* Footer */
+  footer {
+    background: #2d2a35;
+    color: var(--blanco);
+    padding: 60px 0 28px;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 40px;
+    margin-bottom: 40px;
+  }
+
+  .footer-brand .logo {
+    color: var(--blanco);
+    margin-bottom: 12px;
+    display: block;
+  }
+
+  .footer-brand p {
+    color: #c9c2d6;
+    font-size: 0.95rem;
+    max-width: 260px;
+    line-height: 1.6;
+  }
+
+  .footer-links h4 {
+    color: var(--blanco);
+    font-size: 1rem;
+    margin-bottom: 16px;
+    font-weight: 600;
+  }
+
+  .footer-links ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .footer-links a {
+    color: #c9c2d6;
+    font-size: 0.95rem;
+    transition: var(--transicion);
+  }
+
+  .footer-links a:hover {
+    color: var(--lila-principal);
+  }
+
+  .footer-social a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    color: var(--blanco);
+    font-size: 1.1rem;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    transition: var(--transicion);
+  }
+
+  .footer-social a:hover {
+    background: var(--lila-principal);
+    color: #4a375c;
+  }
+
+  .footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 24px;
+    text-align: center;
+    color: #8a8498;
+    font-size: 0.875rem;
+  }
+
+  /* Back to top */
+  .back-to-top {
+    position: fixed;
+    right: 28px;
+    bottom: 28px;
+    width: 52px;
+    height: 52px;
+    background: var(--lila-principal);
+    color: #4a375c;
+    border: none;
+    border-radius: 50%;
+    font-size: 1.25rem;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transicion);
+    z-index: 900;
+    box-shadow: var(--sombra-sutil);
+  }
+
+  .back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .back-to-top:hover {
+    background: #cf9df2;
+    transform: translateY(-3px);
+  }
+
+  /* Floating WhatsApp */
+  .float-whatsapp {
+    position: fixed;
+    right: 28px;
+    bottom: 96px;
+    z-index: 950;
+  }
+
+  .float-whatsapp .btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 20px;
+    background: #25d366;
+    color: var(--blanco);
+    border-radius: 14px;
+    box-shadow: var(--sombra-sutil);
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  .float-whatsapp .btn:hover {
+    background: #1eb053;
+    transform: translateX(-4px);
+  }
+
+  /* Mobile menu */
+  @media (max-width: 900px) {
+    .nav-links {
+      position: fixed;
+      top: 80px;
+      left: 0;
+      width: 100%;
+      background: var(--blanco-calido);
+      flex-direction: column;
+      align-items: center;
+      padding: 32px 0;
+      box-shadow: var(--sombra-sutil);
+      transform: translateY(-120%);
+      transition: transform 0.3s ease;
+    }
+
+    .nav-links.open {
+      transform: translateY(0);
+    }
+
+    .mobile-menu-btn {
+      display: block;
+    }
+
+    .hero .container {
+      grid-template-columns: 1fr;
+      gap: 40px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      text-align: center;
+    }
+
+    .hero p {
+      margin: 0 auto 32px;
+    }
+
+    .hero-buttons {
+      justify-content: center;
+    }
+
+    .hero-visual {
+      height: 340px;
+    }
+
+    section {
+      padding: 64px 0;
+    }
+
+    .nosotros-grid,
+    .mv-grid,
+    .contacto-grid,
+    .footer-grid {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    .catalogo-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .valores-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .nosotros-visual {
+      height: 300px;
+    }
+
+    .emocional .container {
+      padding: 80px 24px;
+    }
+  }
+
+  @media (max-width: 500px) {
+    .catalogo-grid {
+      grid-template-columns: 1fr;
+    }
+    .valores-grid {
+      grid-template-columns: 1fr;
+    }
+    .hero-visual {
+      height: 260px;
+    }
+  }
+
+  /* No horizontal scroll */
+  body {
+    max-width: 100vw;
+  }
+</style>
+</head>
+<body>
+
+<header id="header">
+  <nav class="navbar container">
+    <a href="#" class="logo" aria-label="Luz de Luna">LUZ<span>DE LUNA</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="#nosotros">Nosotros</a></li>
+      <li><a href="#mision-vision">Misión y visión</a></li>
+      <li><a href="#catalogo">Catálogo</a></li>
+      <li><a href="#valores">Nuestros valores</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Abrir menú" aria-expanded="false">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+  </nav>
+</header>
+
+<section class="hero" id="inicio">
+  <div class="hero-bg">
+    <div class="luna-decoration luna-1"></div>
+    <div class="luna-decoration luna-2"></div>
+  </div>
+  <div class="container">
+    <div class="hero-text reveal">
+      <span class="badge">LUZ DE LUNA</span>
+      <h1>Los recuerdos más bonitos <span>merecen permanecer para siempre.</span></h1>
+      <p>Transformamos historias, emociones y momentos especiales en piezas artesanales únicas que acompañan tu vida y mantienen vivos tus recuerdos.</p>
+      <div class="hero-buttons">
+        <a href="#nosotros" class="btn btn-lila">Descubre nuestra esencia</a>
+        <a href="#contacto" class="btn btn-blanco">Contáctanos</a>
+      </div>
+    </div>
+    <div class="hero-visual reveal" style="transition-delay: 0.15s;">
+      <img src="Logo.png" alt="Logo Luz de Luna">
+    </div>
+  </div>
+</section>
+
+<section class="nosotros" id="nosotros">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="badge">Nosotros</span>
+      <h2>Más que piezas, creamos recuerdos.</h2>
+    </div>
+    <div class="nosotros-grid">
+      <div class="nosotros-text reveal">
+        <h3>Luz de Luna nace de la idea de que cada recuerdo merece un lugar especial.</h3>
+        <p>Somos una marca dedicada a transformar historias personales, emociones y vínculos significativos en piezas artesanales únicas.</p>
+        <p>Creemos que los objetos pueden convertirse en símbolos de amor, memoria y conexión. Por eso, cada creación está elaborada con sensibilidad, dedicación y atención a cada detalle, buscando que cada pieza represente verdaderamente la historia de quien la solicita.</p>
+        <p>Nuestra esencia está en crear con propósito, conservar lo que importa y darle forma tangible a aquello que vive en el corazón.</p>
+        <a href="#catalogo" class="btn btn-lila">Ver creaciones</a>
+      </div>
+      <div class="nosotros-visual reveal" style="transition-delay: 0.15s;">
+        <img src="2.jpg" alt="Detalle artesanal Luz de Luna">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="mision-vision" id="mision-vision">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="badge">Misión y visión</span>
+      <h2>Nuestro propósito y nuestra mirada hacia adelante</h2>
+    </div>
+    <div class="mv-grid">
+      <div class="mv-card reveal">
+        <div class="icon"><i class="fa-solid fa-heart"></i></div>
+        <h3>Misión</h3>
+        <p>Luz de Luna se enfoca en crear piezas artesanales únicas que permitan preservar recuerdos, honrar vínculos emocionales y darles forma tangible a las emociones. A través de un proceso creativo basado en la sensibilidad y la dedicación, la marca busca transformar historias personales en objetos significativos que acompañen a las personas en su vida cotidiana.</p>
+        <p>Cada creación se realiza con un alto nivel de compromiso, cuidando cada detalle y garantizando que el resultado final represente fielmente la intención del cliente. Luz de Luna no solo produce objetos, sino que construye experiencias emocionales que generan conexión, consuelo y cercanía entre las personas.</p>
+        <p>Asimismo, la marca tiene como propósito brindar a sus clientes productos con alto valor emocional, especialmente en momentos donde los recuerdos adquieren un valor especial, como puede ser la pérdida de un ser querido o la necesidad de conservar momentos importantes de la vida. De esta forma, las piezas se convierten en símbolos.</p>
+        <p>En esencia, la misión de Luz de Luna es ser un medio a través del cual los recuerdos puedan perdurar en el tiempo, transformándose en elementos que acompañan y reconfortan a quienes los poseen.</p>
+      </div>
+      <div class="mv-card reveal" style="transition-delay: 0.1s;">
+        <div class="icon"><i class="fa-solid fa-eye"></i></div>
+        <h3>Visión</h3>
+        <p>Luz de Luna es una empresa que busca consolidarse como una marca reconocida a nivel nacional por la creación de piezas artesanales únicas con alto valor emocional, destacándose por su capacidad de transformar recuerdos en objetos significativos y duraderos.</p>
+        <p>A mediano plazo, se busca ampliar el alcance del emprendimiento, llegando a un mayor número de personas mediante el uso de redes sociales, plataformas digitales y estrategias de difusión que permitan dar a conocer la propuesta de valor de la marca. También se pretende fortalecer la identidad visual y conceptual de Luz de Luna para lograr reconocimiento y diferenciación en el mercado.</p>
+        <p>A largo plazo, la marca aspira a posicionarse como un referente en el ámbito de los productos personalizados, siendo reconocida no solo por la calidad de sus piezas, sino también por la experiencia emocional que le ofrece a sus clientes. Se espera que Luz de Luna logre expandirse a nivel internacional sin perder su esencia artesanal y su enfoque humano.</p>
+        <p>Finalmente, la visión contempla un crecimiento sostenible, en el que se mantenga la autenticidad, la calidad y la conexión emocional que caracterizan a la marca, evitando la producción masiva y priorizando siempre la creación consciente y significativa.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="catalogo" id="catalogo">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="badge">Catálogo</span>
+      <h2>Creaciones que cuentan historias.</h2>
+      <p>Cada pieza es única, porque cada recuerdo también lo es.</p>
+    </div>
+    <div class="catalogo-grid">
+      <div class="producto-card reveal">
+        <div class="producto-img" onclick="abrirModal('1.jpg')">
+          <img src="1.jpg" alt="Spider-Man artesanal">
+          <div class="lupa"><i class="fa-solid fa-search"></i></div>
+        </div>
+        <div class="producto-info">
+          <h3>Spiderman</h3>
+          <p>Una figura inspirada en el héroe arácnido, ideal para quienes admiran su valentía y espíritu de justicia.</p>
+          <div class="producto-precio">$65.000 COP</div>
+          <button class="producto-btn">Quiero una pieza personalizada</button>
+        </div>
+      </div>
+      <div class="producto-card reveal" style="transition-delay: 0.1s;">
+        <div class="producto-img" onclick="abrirModal('2.jpg')">
+          <img src="2.jpg" alt="Chicken Little artesanal">
+          <div class="lupa"><i class="fa-solid fa-search"></i></div>
+        </div>
+        <div class="producto-info">
+          <h3>Chicken Little</h3>
+          <p>Un personaje tierno y divertido que recuerda que incluso los más pequeños pueden lograr grandes cosas.</p>
+          <div class="producto-precio">$95.000 COP</div>
+          <button class="producto-btn">Quiero una pieza personalizada</button>
+        </div>
+      </div>
+      <div class="producto-card reveal" style="transition-delay: 0.2s;">
+        <div class="producto-img" onclick="abrirModal('3.jpg')">
+          <img src="3.jpg" alt="Pequeño Murciélago artesanal">
+          <div class="lupa"><i class="fa-solid fa-search"></i></div>
+        </div>
+        <div class="producto-info">
+          <h3>Pequeño Murciélago</h3>
+          <p>Una pequeña creación de aspecto encantador, perfecta para quienes sienten cariño por las criaturas nocturnas.</p>
+          <div class="producto-precio">$55.000 COP</div>
+          <button class="producto-btn">Quiero una pieza personalizada</button>
+        </div>
+      </div>
+      <div class="producto-card reveal" style="transition-delay: 0.3s;">
+        <div class="producto-img" onclick="abrirModal('4.jpg')">
+          <img src="4.jpg" alt="Tortuga artesanal">
+          <div class="lupa"><i class="fa-solid fa-search"></i></div>
+        </div>
+        <div class="producto-info">
+          <h3>Tortuga</h3>
+          <p>Una figura inspirada en la tranquilidad y la paciencia de las tortugas, ideal para regalar o coleccionar.</p>
+          <div class="producto-precio">$15.000 COP</div>
+          <button class="producto-btn">Quiero una pieza personalizada</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="valores" id="valores">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="badge">Nuestros valores</span>
+      <h2>Cada detalle tiene un significado.</h2>
+    </div>
+    <div class="valores-grid">
+      <div class="valor-card reveal">
+        <div class="icon"><i class="fa-solid fa-hand-holding-heart"></i></div>
+        <h3>Hecho con amor</h3>
+        <p>Cada pieza es elaborada con dedicación, sensibilidad y cuidado.</p>
+      </div>
+      <div class="valor-card reveal" style="transition-delay: 0.1s;">
+        <div class="icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+        <h3>Personalización</h3>
+        <p>Cada creación representa una historia única y especial.</p>
+      </div>
+      <div class="valor-card reveal" style="transition-delay: 0.2s;">
+        <div class="icon"><i class="fa-solid fa-heart-circle-check"></i></div>
+        <h3>Valor emocional</h3>
+        <p>Creamos objetos que permiten conservar recuerdos importantes.</p>
+      </div>
+      <div class="valor-card reveal" style="transition-delay: 0.3s;">
+        <div class="icon"><i class="fa-solid fa-seedling"></i></div>
+        <h3>Artesanía consciente</h3>
+        <p>Priorizamos la calidad, autenticidad y atención al detalle.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="emocional">
+  <div class="container">
+    <blockquote class="reveal">"Hay recuerdos que no queremos dejar ir, por eso les damos un lugar donde permanecer."</blockquote>
+    <div class="foto reveal" style="transition-delay: 0.2s;">
+      <img src="3.jpg" alt="Recuerdos que permanecen - Luz de Luna">
+    </div>
+  </div>
+</section>
+
+<section class="contacto" id="contacto">
+  <div class="container">
+    <div class="contacto-grid">
+      <div class="contacto-info reveal">
+        <span class="badge">Contacto</span>
+        <h3>Creemos algo especial para ti.</h3>
+        <p>Cuéntanos tu historia y juntos transformaremos ese recuerdo en una pieza única.</p>
+        <div class="footer-social" style="margin-top: 10px;">
+          <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        </div>
+      </div>
+      <div class="contacto-form reveal" style="transition-delay: 0.1s;">
+        <h3>Envíanos un mensaje</h3>
+        <form id="contactForm" novalidate>
+          <div class="form-group">
+            <label for="nombre">Nombre completo</label>
+            <input type="text" id="nombre" placeholder="Juan Pérez" required>
+          </div>
+          <div class="form-group">
+            <label for="correo">Correo electrónico</label>
+            <input type="email" id="correo" placeholder="correo@ejemplo.com" required>
+          </div>
+          <div class="form-group">
+            <label for="telefono">Número de teléfono</label>
+            <input type="tel" id="telefono" placeholder="+57 300 000 0000" required>
+          </div>
+          <div class="form-group">
+            <label for="mensaje">Mensaje</label>
+            <textarea id="mensaje" placeholder="Cuéntanos tu historia..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-lila" id="btnEnviar">Enviar mensaje</button>
+          <div class="form-message" id="formMessage"></div>
+        </form>
+        <button class="whatsapp-btn" id="btnWhatsApp">
+          <i class="fa-brands fa-whatsapp"></i> Escríbenos por WhatsApp
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand reveal">
+        <span class="logo">LUZ<span>DE LUNA</span></span>
+        <p>Conservamos recuerdos, creamos significados.</p>
+      </div>
+      <div class="footer-links reveal" style="transition-delay: 0.1s;">
+        <h4>Navegación</h4>
+        <ul>
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#nosotros">Nosotros</a></li>
+          <li><a href="#mision-vision">Misión y visión</a></li>
+          <li><a href="#catalogo">Catálogo</a></li>
+          <li><a href="#valores">Nuestros valores</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </div>
+      <div class="footer-social reveal" style="transition-delay: 0.2s;">
+        <h4>Síguenos</h4>
+        <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#" id="footerWhatsApp" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+      </div>
+    </div>
+    <div class="footer-bottom reveal">
+      <p>Luz de Luna. Derechos reservados <span id="anio"></span>.</p>
+    </div>
+  </div>
+</footer>
+
+<button class="back-to-top" id="backToTop" aria-label="Regresar al inicio">
+  <i class="fa-solid fa-arrow-up"></i>
+</button>
+
+<div class="float-whatsapp">
+  <a href="#" class="btn" id="floatWhatsApp" aria-label="WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i> WhatsApp
+  </a>
+</div>
+
+<div class="modal" id="imagenModal">
+  <div class="modal-content">
+    <button class="modal-close" id="cerrarModal" aria-label="Cerrar">&times;</button>
+    <img id="modalImg" src="" alt="Ampliación del producto">
+    <p style="text-align:center; font-family:'Poppins',sans-serif; color:#5a5463; font-size:0.95rem;">Haz clic en la imagen para cerrar</p>
+  </div>
+</div>
+
+<script>
+  // Año automático en footer
+  document.getElementById('anio').textContent = new Date().getFullYear();
+
+  // Variable editable de WhatsApp
+  const WHATSAPP_NUMBER = '+573000000000'; // Editar aquí el número real
+
+  // Enlaces de WhatsApp
+  const whatsappLinks = document.querySelectorAll('#btnWhatsApp, #floatWhatsApp, #footerWhatsApp');
+  whatsappLinks.forEach(link => {
+    link.href = `https://wa.me/${WHATSAPP_NUMBER.replace(/[^0-9]/g, '')}`;
+  });
+
+  // Header scroll
+  const header = document.getElementById('header');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 40) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+
+    const btnTop = document.getElementById('backToTop');
+    if (window.scrollY > 300) {
+      btnTop.classList.add('visible');
+    } else {
+      btnTop.classList.remove('visible');
+    }
+  });
+
+  // Regresar al inicio
+  document.getElementById('backToTop').addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  // Menú hamburguesa
+  const mobileBtn = document.getElementById('mobileMenuBtn');
+  const navLinks = document.getElementById('navLinks');
+  mobileBtn.addEventListener('click', () => {
+    const open = navLinks.classList.toggle('open');
+    mobileBtn.setAttribute('aria-expanded', open);
+    mobileBtn.innerHTML = open ? '<i class="fa-solid fa-xmark"></i>' : '<i class="fa-solid fa-bars"></i>';
+  });
+
+  // Cerrar menú al hacer clic en un enlace
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      mobileBtn.setAttribute('aria-expanded', 'false');
+      mobileBtn.innerHTML = '<i class="fa-solid fa-bars"></i>';
+    });
+  });
+
+  // Animaciones al scroll (Intersection Observer)
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // Modal de imagen
+  const modal = document.getElementById('imagenModal');
+  const modalImg = document.getElementById('modalImg');
+  const cerrarModal = document.getElementById('cerrarModal');
+
+  function abrirModal(src) {
+    modalImg.src = src;
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function cerrar() {
+    modal.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  cerrarModal.addEventListener('click', cerrar);
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) cerrar();
+  });
+  modalImg.addEventListener('click', cerrar);
+
+  // Tecla ESC cierra modal
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') cerrar();
+  });
+
+  // Formulario de contacto (preparado para integración real)
+  const form = document.getElementById('contactForm');
+  const btnEnviar = document.getElementById('btnEnviar');
+  const formMessage = document.getElementById('formMessage');
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    btnEnviar.disabled = true;
+    btnEnviar.textContent = 'Enviando...';
+    formMessage.textContent = '';
+
+    // Simulación de envío (reemplazar por integración real a servicio de envío)
+    setTimeout(() => {
+      btnEnviar.disabled = false;
+      btnEnviar.textContent = 'Enviar mensaje';
+      formMessage.textContent = 'Mensaje recibido. Nos pondremos en contacto contigo pronto.';
+      formMessage.style.color = '#725487';
+      form.reset();
+    }, 1200);
+  });
+</script>
+
+</body>
+</html>
